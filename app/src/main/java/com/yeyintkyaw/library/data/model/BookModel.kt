@@ -8,9 +8,8 @@ import com.yeyintkyaw.library.network.responses.ListResponse
 
 interface BookModel {
     fun getAllBooks(
-        onFailure: (String) -> Unit,
-        onSuccess: (List<BookListsVO>) -> Unit
-    )
+        onFailure: (String) -> Unit
+    ): LiveData<List<BookListsVO>>?
     fun getBooksByList(
         string: String,
         onFailure: (String) -> Unit,

@@ -18,11 +18,11 @@ object EBookPresenterImpl: ViewModel(), EBookPresenter {
     }
 
     override fun onUiReady(owner: LifecycleOwner) {
-       mBookModel.getAllBooks({
+       mBookModel.getAllBooks {
            mView?.showError(it)
-       },{
+       }?.observe(owner){
            mView?.showAllBooks(it)
-       })
+       }
     }
 
     override fun onTapItem() {

@@ -13,9 +13,8 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 object BookModelImpl : BaseModel(), BookModel {
     @SuppressLint("CheckResult")
     override fun getAllBooks(
-        onFailure: (String) -> Unit,
-        onSucess: (List<BookListsVO>) -> Unit
-    ) {
+        onFailure: (String) -> Unit
+    ): LiveData<List<BookListsVO>>? {
 
         mBookApi.getAllBooks()
             .subscribeOn(Schedulers.io())
@@ -23,11 +22,13 @@ object BookModelImpl : BaseModel(), BookModel {
             .subscribe({bookResponse->
                 bookResponse.result?.let {
                     mBookDatabase?.listDao()?.insertAllLists(it.lists)
-                    onSucess(it.lists)
+
                 }
             }, {
                 onFailure(it.message.toString())
             })
+        return mBookDatabase?.listDao()?.getAllBooks()
+
     }
 
     @SuppressLint("CheckResult")
