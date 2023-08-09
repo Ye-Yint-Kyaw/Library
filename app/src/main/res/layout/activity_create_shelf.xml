@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activities.CreateShelfActivity">
+    <RelativeLayout
+        android:id="@+id/rlShelfBar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivShelfBack"
+            android:layout_marginStart="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_back"
+            android:layout_centerVertical="true"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCreateShelf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="17sp"
+            android:textColor="@color/black"
+            android:text="Create shelf"/>
+    </RelativeLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilCreateShelf"
+        android:layout_below="@id/rlShelfBar"
+        android:layout_marginTop="35dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_centerHorizontal="true">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextCreateShelf"
+            android:paddingVertical="20dp"
+            android:paddingStart="1dp"
+            android:singleLine="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_edit_text"
+            android:hint="Shelf name"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</RelativeLayout>

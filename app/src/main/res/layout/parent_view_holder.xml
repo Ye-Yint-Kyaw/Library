@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvEbooksHeader"
+        android:layout_marginVertical="16dp"
+        android:layout_marginStart="16dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="More Like Don't Make Me Think, Revisit"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivMoreIcon"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginVertical="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_more"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/childRV"
+        android:paddingEnd="16dp"
+        android:clipToPadding="false"
+        android:layout_below="@id/ivMoreIcon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

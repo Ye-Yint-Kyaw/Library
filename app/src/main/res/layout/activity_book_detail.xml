@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activities.BookDetailActivity">
+
+    <RelativeLayout
+        android:id="@+id/rlBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+
+        android:elevation="1dp">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_back"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_share_black"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp"/>
+
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_below="@id/rlBar"
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/rlBook"
+        android:paddingVertical="20dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iBookCover"
+            app:srcCompat="@drawable/book"
+            android:layout_width="90dp"
+            android:layout_height="140dp"
+            android:scaleType="centerCrop"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBookText"
+            android:layout_toEndOf="@id/iBookCover"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:text="Oranges Are Not the Only Fruits"
+            />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSubTaskOne"
+            android:layout_marginTop="4dp"
+            android:layout_below="@id/tvBookText"
+            android:layout_toEndOf="@id/iBookCover"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#333333"
+            android:layout_marginStart="12dp"
+            android:text="Jeanette Winterson"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSubTaskTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#333333"
+            android:layout_marginStart="12dp"
+            android:layout_below="@id/tvSubTaskOne"
+            android:layout_toEndOf="@id/iBookCover"
+            android:text="Ebook . 178 pages"/>
+
+    </RelativeLayout>
+    <View
+        android:id="@+id/vLine"
+        android:layout_below="@id/rlBook"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#cccccc"/>
+
+    <RelativeLayout
+        android:id="@+id/rlbtn"
+        android:layout_below="@id/vLine"
+        android:paddingTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="88dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnOutline"
+            android:layout_width="130dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/blue"
+            android:layout_height="wrap_content"
+            android:text="Free Sample"
+            android:paddingVertical="12dp"
+            android:paddingHorizontal="10dp"
+            android:background="@drawable/btn_outline"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnFill"
+            android:layout_marginStart="8dp"
+            android:text="Add to wishlist"
+            android:paddingVertical="12dp"
+            android:layout_toEndOf="@id/btnOutline"
+            android:gravity="center"
+            android:background="@drawable/btn_filled"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:layout_width="235dp"
+            android:layout_height="wrap_content" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivInfo"
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_height="20dp"
+            app:srcCompat="@drawable/ic_info"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvInfo"
+            android:layout_toEndOf="@id/ivInfo"
+            android:layout_alignParentBottom="true"
+            android:textSize="12sp"
+            android:layout_marginStart="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#7c7c7c"
+            android:text="Books that you buy on Google Play website can be read in this app"/>
+
+
+    </RelativeLayout>
+    <View
+        android:id="@+id/vLineTwo"
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/rlbtn"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#cccccc"/>
+    <RelativeLayout
+        android:id="@+id/rlAboutBar"
+        android:layout_below="@id/vLineTwo"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="16dp"
+        android:layout_height="?attr/actionBarSize">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="About this ebook"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivAboutMoreIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_more_black"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAboutTitle"
+        android:layout_below="@id/rlAboutBar"
+        android:layout_width="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:textSize="16sp"
+        android:textColor="#333333"
+        android:layout_height="wrap_content"
+        android:text="LoremSpum is the best text dummy LoremSpum is the best text dummy LoremSpum is the best text dummy LoremSpum is the best text dummy LoremSpum is the best text dummy "/>
+
+    <RelativeLayout
+        android:id="@+id/rlRatingBar"
+        android:layout_below="@id/tvAboutTitle"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="16dp"
+        android:layout_height="?attr/actionBarSize">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Ratings and reviews"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivRatingMoreIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_more_black"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/llRatingBar"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="16dp"
+        android:layout_width="match_parent"
+        android:weightSum="3"
+        android:layout_below="@id/rlRatingBar"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3.9"
+                android:textColor="@color/black"
+                android:textSize="42sp"
+                android:textStyle="bold" />
+
+            <RatingBar
+                android:id="@+id/rbStar"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvRate"
+                android:numStars="5"
+                android:rating="3.9"
+                android:theme="@style/RatingBar" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="95 ratings"
+                android:layout_below="@id/rbStar"
+                android:layout_marginTop="8dp"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2">
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llUsers"
+        android:orientation="vertical"
+        android:layout_marginTop="14dp"
+        android:layout_below="@id/llRatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp">
+
+       <RelativeLayout
+           android:layout_marginBottom="12dp"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content">
+           <com.google.android.material.imageview.ShapeableImageView
+               android:id="@+id/ivProfile"
+               app:shapeAppearanceOverlay="@style/AnotherShapeAppearanceOverlay.App.CornerSize50Percent"
+               android:layout_width="35dp"
+               android:layout_height="35dp"
+               app:srcCompat="@drawable/profile"
+               android:scaleType="centerCrop"/>
+
+           <androidx.appcompat.widget.AppCompatTextView
+               android:id="@+id/tvName"
+               android:layout_toEndOf="@id/ivProfile"
+               android:layout_marginStart="12dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="A Google User" />
+           <RatingBar
+               android:id="@+id/rbCmt"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               style="@style/Widget.AppCompat.RatingBar.Small"
+               android:numStars="5"
+               android:rating="3"
+               android:theme="@style/RatingBar"
+               android:layout_toEndOf="@id/ivProfile"
+               android:layout_below="@id/tvName"
+               android:layout_marginStart="12dp"/>
+           <androidx.appcompat.widget.AppCompatTextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="02/08/2023"
+               android:layout_toEndOf="@id/rbCmt"
+               android:layout_below="@id/tvName"
+               android:layout_marginStart="4dp"
+               android:textSize="10sp"
+               android:layout_marginTop="2dp"/>
+           <androidx.appcompat.widget.AppCompatTextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="This is a comment from a google user account. This is a comment from a google user account. This is a comment from a google user account"
+               android:layout_below="@id/rbCmt"
+               android:layout_toEndOf="@id/ivProfile"
+               android:layout_marginStart="12dp"/>
+       </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginBottom="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivProfileOne"
+                app:shapeAppearanceOverlay="@style/AnotherShapeAppearanceOverlay.App.CornerSize50Percent"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                app:srcCompat="@drawable/profile"
+                android:scaleType="centerCrop"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNameOne"
+                android:layout_toEndOf="@id/ivProfileOne"
+                android:layout_marginStart="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A Google User" />
+            <RatingBar
+                android:id="@+id/rbCmtOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:numStars="5"
+                android:rating="3"
+                android:theme="@style/RatingBar"
+                android:layout_toEndOf="@id/ivProfileOne"
+                android:layout_below="@id/tvNameOne"
+                android:layout_marginStart="12dp"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="02/08/2023"
+                android:layout_toEndOf="@id/rbCmtOne"
+                android:layout_below="@id/tvNameOne"
+                android:layout_marginStart="4dp"
+                android:textSize="10sp"
+                android:layout_marginTop="2dp"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="This is a comment from a google user account. This is a comment from a google user account. This is a comment from a google user account"
+                android:layout_below="@id/rbCmtOne"
+                android:layout_toEndOf="@id/ivProfileOne"
+                android:layout_marginStart="12dp"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginBottom="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivProfileTwo"
+                app:shapeAppearanceOverlay="@style/AnotherShapeAppearanceOverlay.App.CornerSize50Percent"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                app:srcCompat="@drawable/profile"
+                android:scaleType="centerCrop"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNameTwo"
+                android:layout_toEndOf="@id/ivProfileTwo"
+                android:layout_marginStart="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A Google User" />
+            <RatingBar
+                android:id="@+id/rbCmtTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:numStars="5"
+                android:rating="3"
+                android:theme="@style/RatingBar"
+                android:layout_toEndOf="@id/ivProfileTwo"
+                android:layout_below="@id/tvNameTwo"
+                android:layout_marginStart="12dp"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="02/08/2023"
+                android:layout_toEndOf="@id/rbCmtTwo"
+                android:layout_below="@id/tvNameTwo"
+                android:layout_marginStart="4dp"
+                android:textSize="10sp"
+                android:layout_marginTop="2dp"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="This is a comment from a google user account. This is a comment from a google user account. This is a comment from a google user account"
+                android:layout_below="@id/rbCmtTwo"
+                android:layout_toEndOf="@id/ivProfileTwo"
+                android:layout_marginStart="12dp"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+    </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

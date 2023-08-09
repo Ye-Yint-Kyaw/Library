@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.RatingsAndReviewsActivity">
+
+    <RelativeLayout
+        android:id="@+id/rlRatingBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Ratings And Reviews"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBack"
+            android:layout_marginStart="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_back"
+            android:paddingEnd="8dp"
+            android:layout_centerVertical="true" />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/llRatingBar"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="16dp"
+        android:layout_width="match_parent"
+        android:weightSum="3"
+        android:layout_below="@id/rlRatingBar"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3.9"
+                android:textColor="@color/black"
+                android:textSize="42sp"
+                android:textStyle="bold" />
+
+            <RatingBar
+                android:id="@+id/rbStar"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvRate"
+                android:numStars="5"
+                android:rating="3.9"
+                android:theme="@style/RatingBar" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="95 ratings"
+                android:layout_below="@id/rbStar"
+                android:layout_marginTop="8dp"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2">
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_below="@id/llRatingBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/llUsers"
+            android:orientation="vertical"
+            android:layout_marginTop="14dp"
+            android:layout_below="@id/llRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp">
+
+            <RelativeLayout
+                android:layout_marginBottom="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivProfile1"
+                    app:shapeAppearanceOverlay="@style/AnotherShapeAppearanceOverlay.App.CornerSize50Percent"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    app:srcCompat="@drawable/profile"
+                    android:scaleType="centerCrop"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvName1"
+                    android:layout_toEndOf="@id/ivProfile1"
+                    android:layout_marginStart="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="A Google User" />
+                <RatingBar
+                    android:id="@+id/rbCmt1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:numStars="5"
+                    android:rating="3"
+                    android:theme="@style/RatingBar"
+                    android:layout_toEndOf="@id/ivProfile1"
+                    android:layout_below="@id/tvName1"
+                    android:layout_marginStart="12dp"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="02/08/2023"
+                    android:layout_toEndOf="@id/rbCmt1"
+                    android:layout_below="@id/tvName1"
+                    android:layout_marginStart="4dp"
+                    android:textSize="10sp"
+                    android:layout_marginTop="2dp"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="This is a comment from a google user account. This is a comment from a google user account. This is a comment from a google user account"
+                    android:layout_below="@id/rbCmt1"
+                    android:layout_toEndOf="@id/ivProfile1"
+                    android:layout_marginStart="12dp"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginBottom="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivProfile2"
+                    app:shapeAppearanceOverlay="@style/AnotherShapeAppearanceOverlay.App.CornerSize50Percent"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    app:srcCompat="@drawable/profile"
+                    android:scaleType="centerCrop"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvName2"
+                    android:layout_toEndOf="@id/ivProfile2"
+                    android:layout_marginStart="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="A Google User" />
+                <RatingBar
+                    android:id="@+id/rbCmt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:numStars="5"
+                    android:rating="3"
+                    android:theme="@style/RatingBar"
+                    android:layout_toEndOf="@id/ivProfile2"
+                    android:layout_below="@id/tvName2"
+                    android:layout_marginStart="12dp"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="02/08/2023"
+                    android:layout_toEndOf="@id/rbCmt2"
+                    android:layout_below="@id/tvName2"
+                    android:layout_marginStart="4dp"
+                    android:textSize="10sp"
+                    android:layout_marginTop="2dp"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="This is a comment from a google user account. This is a comment from a google user account. This is a comment from a google user account"
+                    android:layout_below="@id/rbCmt2"
+                    android:layout_toEndOf="@id/ivProfile2"
+                    android:layout_marginStart="12dp"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginBottom="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivProfile3"
+                    app:shapeAppearanceOverlay="@style/AnotherShapeAppearanceOverlay.App.CornerSize50Percent"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    app:srcCompat="@drawable/profile"
+                    android:scaleType="centerCrop"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvName3"
+                    android:layout_toEndOf="@id/ivProfile3"
+                    android:layout_marginStart="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="A Google User" />
+                <RatingBar
+                    android:id="@+id/rbCmt3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:numStars="5"
+                    android:rating="3"
+                    android:theme="@style/RatingBar"
+                    android:layout_toEndOf="@id/ivProfile3"
+                    android:layout_below="@id/tvName3"
+                    android:layout_marginStart="12dp"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="02/08/2023"
+                    android:layout_toEndOf="@id/rbCmt3"
+                    android:layout_below="@id/tvName3"
+                    android:layout_marginStart="4dp"
+                    android:textSize="10sp"
+                    android:layout_marginTop="2dp"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="This is a comment from a google user account. This is a comment from a google user account. This is a comment from a google user account"
+                    android:layout_below="@id/rbCmt3"
+                    android:layout_toEndOf="@id/ivProfile3"
+                    android:layout_marginStart="12dp"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginBottom="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivProfile4"
+                    app:shapeAppearanceOverlay="@style/AnotherShapeAppearanceOverlay.App.CornerSize50Percent"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    app:srcCompat="@drawable/profile"
+                    android:scaleType="centerCrop"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvName4"
+                    android:layout_toEndOf="@id/ivProfile4"
+                    android:layout_marginStart="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="A Google User" />
+                <RatingBar
+                    android:id="@+id/rbCmt4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:numStars="5"
+                    android:rating="3"
+                    android:theme="@style/RatingBar"
+                    android:layout_toEndOf="@id/ivProfile4"
+                    android:layout_below="@id/tvName4"
+                    android:layout_marginStart="12dp"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="02/08/2023"
+                    android:layout_toEndOf="@id/rbCmt4"
+                    android:layout_below="@id/tvName4"
+                    android:layout_marginStart="4dp"
+                    android:textSize="10sp"
+                    android:layout_marginTop="2dp"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="This is a comment from a google user account. This is a comment from a google user account. This is a comment from a google user account"
+                    android:layout_below="@id/rbCmt4"
+                    android:layout_toEndOf="@id/ivProfile4"
+                    android:layout_marginStart="12dp"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginBottom="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivProfile5"
+                    app:shapeAppearanceOverlay="@style/AnotherShapeAppearanceOverlay.App.CornerSize50Percent"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    app:srcCompat="@drawable/profile"
+                    android:scaleType="centerCrop"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvName5"
+                    android:layout_toEndOf="@id/ivProfile5"
+                    android:layout_marginStart="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="A Google User" />
+                <RatingBar
+                    android:id="@+id/rbCmt5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:numStars="5"
+                    android:rating="3"
+                    android:theme="@style/RatingBar"
+                    android:layout_toEndOf="@id/ivProfile5"
+                    android:layout_below="@id/tvName5"
+                    android:layout_marginStart="12dp"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="02/08/2023"
+                    android:layout_toEndOf="@id/rbCmt5"
+                    android:layout_below="@id/tvName5"
+                    android:layout_marginStart="4dp"
+                    android:textSize="10sp"
+                    android:layout_marginTop="2dp"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="This is a comment from a google user account. This is a comment from a google user account. This is a comment from a google user account"
+                    android:layout_below="@id/rbCmt5"
+                    android:layout_toEndOf="@id/ivProfile5"
+                    android:layout_marginStart="12dp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginBottom="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivProfileOne"
+                    app:shapeAppearanceOverlay="@style/AnotherShapeAppearanceOverlay.App.CornerSize50Percent"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    app:srcCompat="@drawable/profile"
+                    android:scaleType="centerCrop"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvNameOne"
+                    android:layout_toEndOf="@id/ivProfileOne"
+                    android:layout_marginStart="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="A Google User" />
+                <RatingBar
+                    android:id="@+id/rbCmtOne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:numStars="5"
+                    android:rating="3"
+                    android:theme="@style/RatingBar"
+                    android:layout_toEndOf="@id/ivProfileOne"
+                    android:layout_below="@id/tvNameOne"
+                    android:layout_marginStart="12dp"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="02/08/2023"
+                    android:layout_toEndOf="@id/rbCmtOne"
+                    android:layout_below="@id/tvNameOne"
+                    android:layout_marginStart="4dp"
+                    android:textSize="10sp"
+                    android:layout_marginTop="2dp"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="This is a comment from a google user account. This is a comment from a google user account. This is a comment from a google user account"
+                    android:layout_below="@id/rbCmtOne"
+                    android:layout_toEndOf="@id/ivProfileOne"
+                    android:layout_marginStart="12dp"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_marginBottom="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivProfileTwo"
+                    app:shapeAppearanceOverlay="@style/AnotherShapeAppearanceOverlay.App.CornerSize50Percent"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    app:srcCompat="@drawable/profile"
+                    android:scaleType="centerCrop"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvNameTwo"
+                    android:layout_toEndOf="@id/ivProfileTwo"
+                    android:layout_marginStart="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="A Google User" />
+                <RatingBar
+                    android:id="@+id/rbCmtTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:numStars="5"
+                    android:rating="3"
+                    android:theme="@style/RatingBar"
+                    android:layout_toEndOf="@id/ivProfileTwo"
+                    android:layout_below="@id/tvNameTwo"
+                    android:layout_marginStart="12dp"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="02/08/2023"
+                    android:layout_toEndOf="@id/rbCmtTwo"
+                    android:layout_below="@id/tvNameTwo"
+                    android:layout_marginStart="4dp"
+                    android:textSize="10sp"
+                    android:layout_marginTop="2dp"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="This is a comment from a google user account. This is a comment from a google user account. This is a comment from a google user account"
+                    android:layout_below="@id/rbCmtTwo"
+                    android:layout_toEndOf="@id/ivProfileTwo"
+                    android:layout_marginStart="12dp"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</RelativeLayout>

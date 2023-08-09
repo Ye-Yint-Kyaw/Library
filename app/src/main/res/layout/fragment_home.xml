@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    tools:context=".fragments.HomeFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPagerClickedBooks"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:elevation="16dp"
+            android:layout_marginTop="22dp"
+            android:paddingHorizontal="70dp"
+            android:clipToPadding="false"
+            android:clipChildren="false"/>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tlBooks"
+            android:layout_marginTop="28dp"
+            android:layout_below="@id/viewPagerClickedBooks"
+            android:layout_width="match_parent"
+            android:background="#f8f8f8"
+            android:layout_height="?attr/actionBarSize"
+            android:elevation="1dp"/>
+
+
+<!--            <com.google.android.material.tabs.TabItem-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Ebooks"/>-->
+
+<!--            <com.google.android.material.tabs.TabItem-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Audiobooks"/>-->
+
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/booksFragmentContainer"
+            android:layout_below="@id/tlBooks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

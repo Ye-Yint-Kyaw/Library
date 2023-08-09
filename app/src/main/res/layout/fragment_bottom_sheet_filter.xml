@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.BottomSheetFilterFragment">
+
+    <RelativeLayout
+        android:id="@+id/rlBottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View as"
+            android:layout_centerVertical="true"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginStart="16dp"/>
+
+    </RelativeLayout>
+    <View
+        android:id="@+id/verticalLine"
+        android:layout_below="@id/rlBottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#9c9c9c"/>
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_marginStart="16dp"
+        android:layout_below="@id/verticalLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Large Grid View"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp"/>
+        <RadioButton
+            android:id="@+id/small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Small Grid View"/>
+
+    </RadioGroup>
+
+
+</RelativeLayout>

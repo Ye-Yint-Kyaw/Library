@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="110dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvEbooks"
+        app:cardCornerRadius="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+
+            android:layout_width="110dp"
+            android:layout_height="175dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/book" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivEbooksForYouMenu"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_menu"
+        android:elevation="4dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tbBookTitle"
+        android:layout_below="@id/cvEbooks"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:text="Lean UX: Design Jeff Gotheif"/>
+
+</RelativeLayout>
