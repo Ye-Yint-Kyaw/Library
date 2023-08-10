@@ -6,7 +6,6 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 
-@Entity(tableName = "books")
 data class BooksVO(
     @SerializedName("author")
     @ColumnInfo("author")
@@ -39,11 +38,6 @@ data class BooksVO(
     @SerializedName("title")
     @ColumnInfo("title")
     val title: String?,
-
-    @SerializedName("primary_isbn13")
-    @ColumnInfo("primary_isbn13")
-    @PrimaryKey
-    val primaryIsbn13: String?,
 
     @ColumnInfo("isClicked")
     val isClicked: Boolean

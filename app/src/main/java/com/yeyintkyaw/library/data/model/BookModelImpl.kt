@@ -7,6 +7,7 @@ import com.yeyintkyaw.library.data.vos.BooksVO
 import com.yeyintkyaw.library.data.vos.ResultsVO
 import com.yeyintkyaw.library.network.responses.ListResponse
 import com.yeyintkyaw.library.utils.API_KEY
+import com.yeyintkyaw.library.utils.subscribeDBWithCompletable
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
 
@@ -21,7 +22,7 @@ object BookModelImpl : BaseModel(), BookModel {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({bookResponse->
                 bookResponse.result?.let {
-                    mBookDatabase?.listDao()?.insertAllLists(it.lists)
+                    mBookDatabase?.listDao()?.insertAllLists(it.lists)?.subscribeDBWithCompletable()
 
                 }
             }, {
