@@ -14,7 +14,7 @@ import com.yeyintkyaw.library.data.vos.ResultsVO
 class BookListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun bind(book: ResultsVO){
         val title: TextView = itemView.findViewById(R.id.tvBookListTitle)
-        book.book_details.firstOrNull()?.let {book->
+        book.book_details?.firstOrNull()?.let {book->
            title.text = book.title ?: ""
         }
     }

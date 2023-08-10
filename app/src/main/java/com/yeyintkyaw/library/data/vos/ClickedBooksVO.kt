@@ -2,16 +2,15 @@ package com.yeyintkyaw.library.data.vos
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
-import androidx.room.Index
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-@Entity(tableName = "clicked_books", indices = [Index(value = ["title"], unique = true)])
-data class BooksVO(
 
-    @ColumnInfo("clicked_book_id")
+data class ClickedBooksVO (
+
+    @ColumnInfo("clickedBookId")
     @PrimaryKey(autoGenerate = true)
-    val clickedBookId: Int,
+    val clickedBookId: Int = 1,
 
     @SerializedName("author")
     @ColumnInfo("author")
@@ -44,5 +43,9 @@ data class BooksVO(
     @SerializedName("title")
     @ColumnInfo("title")
     val title: String?,
+
+    @ColumnInfo("isClicked")
+    val isClicked: Boolean
+
 
 )

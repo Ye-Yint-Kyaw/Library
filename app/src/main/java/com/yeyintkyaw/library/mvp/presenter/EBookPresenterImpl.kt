@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.yeyintkyaw.library.data.model.BookModel
 import com.yeyintkyaw.library.data.model.BookModelImpl
 import com.yeyintkyaw.library.data.vos.BooksVO
+import com.yeyintkyaw.library.data.vos.ClickedBooksVO
 import com.yeyintkyaw.library.mvp.view.EBookView
 
 object EBookPresenterImpl: ViewModel(), EBookPresenter {
@@ -23,6 +24,8 @@ object EBookPresenterImpl: ViewModel(), EBookPresenter {
        }?.observe(owner){
            mView?.showAllBooks(it)
        }
+        //mBookModel.insertAllBook()
+
     }
 
     override fun onTapItem() {
@@ -34,6 +37,7 @@ object EBookPresenterImpl: ViewModel(), EBookPresenter {
     }
 
     override fun onTapBookToDetail(book: BooksVO) {
+        mBookModel?.insertClickedBook(book)
         mView?.navigateToBookDetail(book)
     }
 

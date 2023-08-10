@@ -1,6 +1,7 @@
 package com.yeyintkyaw.library.data.model
 
 import android.annotation.SuppressLint
+import android.util.Log
 import androidx.lifecycle.LiveData
 import com.yeyintkyaw.library.data.vos.BookListsVO
 import com.yeyintkyaw.library.data.vos.BooksVO
@@ -13,23 +14,23 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 
 object BookModelImpl : BaseModel(), BookModel {
     @SuppressLint("CheckResult")
-    override fun getAllBooks(
-        onFailure: (String) -> Unit
-    ): LiveData<List<BookListsVO>>? {
-
+    override fun insertAllBook() {
         mBookApi.getAllBooks()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({bookResponse->
+            .subscribe { bookResponse ->
                 bookResponse.result?.let {
-                    mBookDatabase?.listDao()?.insertAllLists(it.lists)?.subscribeDBWithCompletable()
-
+                    it.lists?.let { it1 -> mBookDatabase?.listDao()?.insertAllLists(it1)?.subscribeDBWithCompletable() }
+                    Log.d("data", it.lists.toString())
                 }
-            }, {
-                onFailure(it.message.toString())
-            })
-        return mBookDatabase?.listDao()?.getAllBooks()
+            }
+    }
 
+    @SuppressLint("CheckResult")
+    override fun getAllBooks(
+        onFailure: (String) -> Unit
+    ): LiveData<List<BookListsVO>>? {
+        return mBookDatabase?.listDao()?.getAllBooks()
     }
 
     @SuppressLint("CheckResult")
@@ -46,5 +47,15 @@ object BookModelImpl : BaseModel(), BookModel {
             },{
                 onFailure(it.message.toString())
             })
+    }
+
+    override fun insertClickedBook(book: BooksVO) {
+        mBookDatabase?.bookDao()?.insertClickedBooks(book)?.subscribeDBWithCompletable()
+    }
+
+    override fun getClickedBooks(): LiveData<List<BooksVO>>? {
+
+        return mBookDatabase?.bookDao()?.getClickedBooks()
+
     }
 }

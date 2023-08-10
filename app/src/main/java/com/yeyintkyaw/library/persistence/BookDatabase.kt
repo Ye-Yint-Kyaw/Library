@@ -7,15 +7,17 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.yeyintkyaw.library.data.vos.BookListsVO
 import com.yeyintkyaw.library.data.vos.BooksVO
+import com.yeyintkyaw.library.persistence.daos.BooksDao
 import com.yeyintkyaw.library.persistence.daos.ListDao
 import com.yeyintkyaw.library.persistence.typeconverters.BooksTypeConverter
 
 
 @Database(
     entities = [
-        BookListsVO::class
+        BookListsVO::class,
+        BooksVO::class
     ],
-    version = 1,
+    version = 5,
     exportSchema = false
 )
 @TypeConverters(
@@ -41,4 +43,5 @@ abstract class BookDatabase: RoomDatabase() {
 
     }
     abstract fun listDao(): ListDao
+    abstract fun bookDao(): BooksDao
 }

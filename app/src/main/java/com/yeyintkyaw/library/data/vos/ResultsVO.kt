@@ -22,8 +22,8 @@ data class ResultsVO(
     val next_published_date: String?,
 
     @SerializedName("lists")
-    val lists: List<BookListsVO>,
+    val lists: List<BookListsVO>?,
 
     @SerializedName("book_details")
-    val book_details: List<BooksVO>
+    val book_details: List<BooksVO>?
 )

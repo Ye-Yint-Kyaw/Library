@@ -11,7 +11,7 @@ import io.reactivex.Completable
 @Dao
 interface ListDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAllLists(lists: List<BookListsVO>) : Completable
+    fun insertAllLists(lists: List<BookListsVO>): Completable
 
     @Query("SELECT * FROM lists")
     fun getAllBooks(): LiveData<List<BookListsVO>>

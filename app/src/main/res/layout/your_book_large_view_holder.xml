@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:paddingHorizontal="4dp"
@@ -8,14 +8,15 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="280dp"
         app:cardCornerRadius="5dp">
+
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivYourBookListBookCover"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/book"/>
+            app:srcCompat="@drawable/book" />
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivYourBookMenu"
             android:layout_width="wrap_content"
@@ -23,9 +24,11 @@
             android:layout_gravity="end"
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
+            android:scaleType="centerCrop"
             app:srcCompat="@drawable/ic_menu"/>
     </androidx.cardview.widget.CardView>
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvYourBookTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="The Little Stranger Sarah Waters"

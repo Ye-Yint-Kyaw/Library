@@ -34,6 +34,7 @@ class YourBookFragment : Fragment(), YourBooksView {
         setUpPresenter()
         setUpRecyclerViews()
         setUpListeners(view)
+        mPresenter.onUiReady(this)
     }
 
     private fun setUpPresenter() {
@@ -95,6 +96,10 @@ class YourBookFragment : Fragment(), YourBooksView {
         val bottomSheetFilterFragment = BottomSheetFilterFragment()
         bottomSheetFilterFragment.setBottomSheetDelegate(mPresenter)
         bottomSheetFilterFragment.show(parentFragmentManager, bottomSheetFilterFragment.tag)
+    }
+
+    override fun showClickedBooks(books: List<BooksVO>) {
+        mAdapterLarge.setNewData(books)
     }
 
     override fun showError(errMsg: String) {

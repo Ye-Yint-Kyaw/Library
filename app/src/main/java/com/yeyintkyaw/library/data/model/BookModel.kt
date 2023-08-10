@@ -7,6 +7,7 @@ import com.yeyintkyaw.library.data.vos.ResultsVO
 import com.yeyintkyaw.library.network.responses.ListResponse
 
 interface BookModel {
+    fun insertAllBook()
     fun getAllBooks(
         onFailure: (String) -> Unit
     ): LiveData<List<BookListsVO>>?
@@ -15,4 +16,7 @@ interface BookModel {
         onFailure: (String) -> Unit,
         onSuccess: (List<ResultsVO>) -> Unit
     )
+    fun insertClickedBook(book: BooksVO)
+
+    fun getClickedBooks(): LiveData<List<BooksVO>>?
 }

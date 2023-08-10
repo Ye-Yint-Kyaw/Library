@@ -65,6 +65,7 @@ class EbooksFragment : Fragment(), EBookView {
         startActivity(BookListActivity.newIntent(requireContext(), list_name))
     }
 
+
     override fun showBottomSheet() {
         val bottomSheetFragment = BottomSheetFragment()
         bottomSheetFragment.show(parentFragmentManager,bottomSheetFragment.tag)

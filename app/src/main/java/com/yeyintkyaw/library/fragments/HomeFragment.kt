@@ -18,14 +18,18 @@ import com.yeyintkyaw.library.R
 import com.yeyintkyaw.library.activities.BookDetailActivity
 import com.yeyintkyaw.library.adapters.ClickedBooksViewHolderAdapter
 import com.yeyintkyaw.library.data.vos.BooksVO
+import com.yeyintkyaw.library.mvp.presenter.HomePresenter
+import com.yeyintkyaw.library.mvp.presenter.HomePresenterImpl
 import com.yeyintkyaw.library.mvp.presenter.MainPresenter
 import com.yeyintkyaw.library.mvp.presenter.MainPresenterImpl
+import com.yeyintkyaw.library.mvp.view.HomeView
 import com.yeyintkyaw.library.mvp.view.MainView
 
 
-class HomeFragment : Fragment(), MainView {
+class HomeFragment : Fragment(), MainView, HomeView {
 
     lateinit var mPresenter: MainPresenter
+    lateinit var mHomePresenter: HomePresenter
 
     lateinit var mClickedBookAdapter: ClickedBooksViewHolderAdapter
 
@@ -45,11 +49,15 @@ class HomeFragment : Fragment(), MainView {
             replace(R.id.booksFragmentContainer, EbooksFragment())
         }
         setUpTabLayout()
+        mHomePresenter.onUiReady(this)
 
     }
     private fun setUpPresenter(){
         mPresenter = ViewModelProvider(this)[MainPresenterImpl::class.java]
         (mPresenter as MainPresenterImpl).initView(this)
+
+        mHomePresenter = ViewModelProvider(this)[HomePresenterImpl::class.java]
+        (mHomePresenter as HomePresenterImpl).initView(this)
     }
 
     private fun setUpTabLayout() {
@@ -119,6 +127,9 @@ class HomeFragment : Fragment(), MainView {
 //        startActivity(SearchBookActivity.newIntent(requireContext()))
     }
 
+    override fun showClickedBooks(books: List<BooksVO>) {
+        mClickedBookAdapter.setNewData(books)
+    }
 
 
     override fun showError(errMsg: String) {
