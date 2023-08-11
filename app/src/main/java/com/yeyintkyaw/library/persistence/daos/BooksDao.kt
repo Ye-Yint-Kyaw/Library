@@ -13,6 +13,6 @@ interface BooksDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertClickedBooks(book: BooksVO): Completable
 
-    @Query("SELECT * FROM clicked_books")
+    @Query("SELECT * FROM clicked_books ORDER BY clicked_book_id DESC")
     fun getClickedBooks(): LiveData<List<BooksVO>>
 }

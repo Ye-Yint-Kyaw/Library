@@ -6,8 +6,7 @@ import androidx.lifecycle.LiveData
 import com.yeyintkyaw.library.data.vos.BookListsVO
 import com.yeyintkyaw.library.data.vos.BooksVO
 import com.yeyintkyaw.library.data.vos.ResultsVO
-import com.yeyintkyaw.library.network.responses.ListResponse
-import com.yeyintkyaw.library.utils.API_KEY
+import com.yeyintkyaw.library.data.vos.ShelfVO
 import com.yeyintkyaw.library.utils.subscribeDBWithCompletable
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
@@ -57,5 +56,21 @@ object BookModelImpl : BaseModel(), BookModel {
 
         return mBookDatabase?.bookDao()?.getClickedBooks()
 
+    }
+
+    override fun insertShelf(shelfVO: ShelfVO) {
+        mBookDatabase?.shelfDao()?.insertShelf(shelfVO)?.subscribeDBWithCompletable()
+    }
+
+    override fun getCountShelf(): Int? {
+        return mBookDatabase?.shelfDao()?.getCount()
+    }
+
+    override fun getAllShelves(): LiveData<List<ShelfVO>>? {
+        return mBookDatabase?.shelfDao()?.getAllShelves()
+    }
+
+    override fun deleteShelf(shelfId: Int) {
+        mBookDatabase?.shelfDao()?.deleteShelf(shelfId)
     }
 }

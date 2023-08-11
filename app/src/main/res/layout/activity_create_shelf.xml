@@ -16,14 +16,28 @@
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_back"
             android:layout_centerVertical="true"/>
+
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvCreateShelf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:textSize="17sp"
+            android:text="Create shelf"
             android:textColor="@color/black"
-            android:text="Create shelf"/>
+            android:textSize="17sp" />
+        <TextView
+            android:id="@+id/tvSave"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="16dp"
+            android:layout_centerVertical="true"
+            android:textColor="@color/blue"
+            android:textColorLink="@color/dark_blue"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:textSize="15sp"
+            />
     </RelativeLayout>
 
     <com.google.android.material.textfield.TextInputLayout

@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import com.yeyintkyaw.library.data.vos.BookListsVO
 import com.yeyintkyaw.library.data.vos.BooksVO
 import com.yeyintkyaw.library.data.vos.ResultsVO
-import com.yeyintkyaw.library.network.responses.ListResponse
+import com.yeyintkyaw.library.data.vos.ShelfVO
 
 interface BookModel {
     fun insertAllBook()
@@ -19,4 +19,11 @@ interface BookModel {
     fun insertClickedBook(book: BooksVO)
 
     fun getClickedBooks(): LiveData<List<BooksVO>>?
+
+    fun insertShelf(shelfVO: ShelfVO)
+
+    fun getCountShelf(): Int?
+
+    fun getAllShelves(): LiveData<List<ShelfVO>>?
+    fun deleteShelf(shelfId: Int)
 }
